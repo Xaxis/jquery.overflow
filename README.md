@@ -6,11 +6,14 @@ Version 1.0.0
 
 A jQuery plugin for responding to elements that have overflowed the viewport.
 
-jQuery.overflow allows you to fire two separate callbacks. One callback (`over`) which fires continuously when an 
-element is outside of the viewport (fully or partially) and another (`under`) that fires once when an overflowed 
+jQuery.overflow allows you to fire two separate callbacks. One callback `over` which fires continuously when an 
+element is outside of the viewport (fully or partially) and another `under` that fires once when an overflowed 
 element is no longer overflowed from a direction (top, right, bottom, or left).
 
-A practical usage example might be keeping a popup message box visible when a browser window is being resized.
+A practical usage example might be keeping a popup message box visible when a browser window is being resized: often
+a popup message box should display to one side of an element in larger viewport conditions but when the viewport reaches
+a smaller dimension that same message box should be able to intelligently relocate itself elsewhere. jQuery.overflow
+provides an easy and semantic mechanism for responding to situations like these and many others.
 
 ## Author
 
