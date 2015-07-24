@@ -74,8 +74,8 @@ longer overflow (upon viewport resize) it is placed back where it started. In th
     });
 ```
 
-One other property `load` passed to jQuery.overflow determines if the `over` and `under` callbacks are to fire once on
-load. By default `load` is `true`.
+Additionally a property `load` can be passed to jQuery.overflow to indicate whether the `over` callback should fire 
+once on load. By default `load` is set to `true`.
 
 For a clearer example see `test/test.html`.
 
