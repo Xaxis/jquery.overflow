@@ -27,8 +27,8 @@ Include `jquery.overflow.min.js` after jQuery.
 
 The following example repositions an element based on the direction of its overflow. In this instance a message box 
 overflows on the right side of the screen and is then repositioned above its target. When the message box would no 
-longer overflow (upon continued screen resize) it is placed back where it started (using 
-[jQuery.boxel](https://github.com/Xaxis/jquery.boxel)).
+longer overflow (upon viewport resize) it is placed back where it started. In this example 
+[jQuery.boxel](https://github.com/Xaxis/jquery.boxel) is being used to position the message box relative to an element.
 
 ```css
 #rel {
