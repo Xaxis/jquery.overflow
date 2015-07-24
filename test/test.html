@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+<head lang="en">
+    <meta charset="UTF-8">
+    <title>jquery.overflow</title>
+    <script src="../node_modules/jquery/dist/jquery.min.js"></script>
+    <script src="../node_modules/jquery.boxel/dist/jquery.boxel.min.js"></script>
+    <script src="../dist/jquery.overflow.min.js"></script>
+    <style>
+        body, html {
+            margin: 0;
+            padding: 0;
+            font-family: sans-serif;
+        }
+        .container {
+            width: 800px;
+            height: 400px;
+            margin: 100px auto;
+        }
+        #rel {
+            width: 400px;
+            height: 260px;
+            float: right;
+        }
+        .box {
+            width: 200px;
+            border: 1px dashed black;
+            position: absolute;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <button id="rel">relative element</button>
+    <div id="box" class="box">message box</div>
+</div>
+
+<!--
+ Resize browser window to view jQuery.overflow demo
+-->
+<script>
+    var box = $('#box');
+    var rel = $('#rel');
+
+    // Position element using jQuery.boxel
+    box.boxel({pos: 'r', rel: rel});
+    $(window).on('resize', function() {
+        box.boxel({pos: 'r', rel: rel});
+    });
+
+    // jQuery.overflow demo
+    $('.box').overflow({
+        load: true,
+        over: function(dir, dist) {
+            if (dir == 'right') {
+                box.boxel({pos: 't', rel: rel});
+            }
+        },
+        under: function(dir, dist) {
+            if (dir == 'right') {
+                box.boxel({pos: 'r', rel: rel});
+            }
+        }
+    });
+</script>
+</body>
+</html>
